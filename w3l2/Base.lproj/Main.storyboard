@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,51 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="w3l2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dsw-ah-sIP">
+                                <rect key="frame" x="146.5" y="114" width="121" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="XfU-iM-h6T"/>
+                                    <constraint firstAttribute="height" constant="27" id="ZpK-3R-7Rq"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="慢"/>
+                                    <segment title="中"/>
+                                    <segment title="快"/>
+                                    <segment title="飛"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segment:" destination="BYZ-38-t0r" eventType="valueChanged" id="eZ4-ng-TXd"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CRi-Fz-b1O">
+                                <rect key="frame" x="148" y="141" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pph-VE-ETq"/>
+                                    <constraint firstAttribute="width" constant="114" id="c8p-wm-lks"/>
+                                </constraints>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dsw-ah-sIP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="6Xr-xG-eaZ"/>
+                            <constraint firstItem="CRi-Fz-b1O" firstAttribute="top" secondItem="dsw-ah-sIP" secondAttribute="bottom" id="byn-hz-VUo"/>
+                            <constraint firstItem="CRi-Fz-b1O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWb-j5-1M8"/>
+                            <constraint firstItem="dsw-ah-sIP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tmF-hn-VaQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="segment" destination="dsw-ah-sIP" id="SSY-88-7bd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
 </document>
